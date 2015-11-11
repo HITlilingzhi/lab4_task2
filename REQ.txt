@@ -3,6 +3,10 @@
 (0.85,25)
 (0.80,30)
 
-add branch B3
 
+add branch B3
 step12 test for branch B3
+test for branch B2
+and test for branch B4
+
+merge B3 and B4
