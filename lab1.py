@@ -1,3 +1,4 @@
+#step12 test for branch B3
 # -*- coding: utf-8 -*-
 #price代表第几个字母第多少组的价格
 #stability代表第几个字母第多少组的稳定性
