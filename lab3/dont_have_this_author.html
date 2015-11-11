@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="{% static "tables.css" %}" />   
+<!--
+  <link rel="stylesheet" type="text/css" href="{% static "none_search_people.css" %}" />
+  <style>
+a:link {text-decoration:none;}
+a:visited {text-decoration:none; color:#0000ff;}
+a:hover {text-decoration:underline; color:ff2138;}
+a:active {text-decoration:underline;}
+
+</style>
+<style type="text/css">
+body {background-image:url(/static/background.png); 
+      background-repeat: no-repeat;
+      background-attachment:fixed;
+      background-position: 50% 0%;
+      font-family: Microsoft YaHei;
+}
+-->
+</style>
+    <title>无该作者</title>
+  </head>
+
+  <body>
+  <br><br>
+  	<p align="center" id="notexist"><strong>该作者未录入！</strong></p><br />
+  	<a id="return" href="/book_list/"><p align="center"><strong>（返回)</strong></p></a>
+
+  </body>
+</html>

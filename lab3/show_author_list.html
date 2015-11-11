@@ -1,0 +1,57 @@
+{% load staticfiles %}
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="{% static "tables.css" %}" />   
+  <!--    <link rel="stylesheet" type="text/css" href="{% static "show_people_list.css" %}" />    -->
+<style>
+a:link {text-decoration:none;}
+a:visited {text-decoration:none; color:#0000ff;}
+a:hover {text-decoration:underline; color:ff2138;}
+a:active {text-decoration:underline;}
+
+</style>
+<!--
+<style type="text/css">
+body {background-image:url(/static/background.png); 
+      background-repeat: no-repeat;
+      background-attachment:fixed;
+      background-position: 50% 0%;
+}
+</style>
+-->
+    <title>全部作家</title>
+  </head>
+
+  <body>
+  <br /><br />
+  	<div align="center" id="title"><h1>全部作家</h1></div>
+    <br />
+    <div id="mainpart">
+  	<div id="renshu" align="center">您共录入<b>{{count}}</b>位作家。<a href="/new_author/">添加新作家</a></div>
+  	<br />
+
+  	<br />
+
+	<table border=1 align="center" id="list_table">
+	 <tr>
+	  <th>作者ID</th><th>姓名</th><th>年龄</th>
+	  <th>国籍</th><th>删除作者及其书目</th>
+	 </tr>
+	{% for author in author_list %}
+	 <tr>
+	  <td>{{ author.AuthorID }}</td>
+	  <td>{{ author.Name }}</td>
+	  <td>{{ author.Age }}</td>
+	  <td>{{ author.Country }}</td>
+	  <td align="center"><a href="/delete_author/?id={{author.id}}">删除</a></td>
+
+
+
+	 </tr>
+	{% endfor %}
+	</table><br />
+	
+  </div>
+<a id="return" href="/book_list/"><p align="center"><strong>（返回首页)</strong></p></a>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+{% load staticfiles %}
+
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="{% static "tables.css" %}" />   
+<!--
+  <link rel="stylesheet" type="text/css" href="{% static "show_people_list.css" %}" />
+<style>
+a:link {text-decoration:none;}
+a:visited {text-decoration:none; color:#0000ff;}
+a:hover {text-decoration:underline; color:ff2138;}
+a:active {text-decoration:underline;}
+
+</style>
+
+<style type="text/css">
+body {background-image:url(/static/background.png); 
+      background-repeat: no-repeat;
+      background-attachment:fixed;
+      background-position: 50% 0%;
+}
+#return{
+  font-size: 200%;
+
+}
+</style>
+-->
+
+    <title>更新书目</title>
+  </head>
+
+  <body>
+
+    <br /><br />
+    <div align="center" id="title"><h1>更新书目</h1></div>
+
+<form method="post" onsubmit="alert('成功更新了书目!')">
+<table border=1 align="center" id="search">
+
+<tr>
+  <th>书名</th><th>ISBN</th><th>作者ID</th><th>出版商</th><th>出版日期</th>
+	  <th>价格</th><th>操作</th>
+ </tr>
+ 
+ <tr>
+  <td><input name="Title" type="text" value="{{update_book.Title}}" disabled="true" readOnly="true"></td>
+  <td><input name="ISBN" type="text" value="{{update_book.ISBN}}" disabled="true" readOnly="true"></td>
+  <td><input name="AuthorID" type="text" value="{{update_book.AuthorID}}"></td>
+  <td><input name="Publisher" type="text" value="{{update_book.Publisher}}"></td>
+  <td><input name="PublishDate" type="text" value="{{update_book.PublishDate}}"></td>
+  <td><input name="Price" type="text" value="{{update_book.Price}}"></td>
+
+  <td><input type="submit" value="保存"> 
+<br>
+  <input type="reset" value="重填"></td>
+ </tr>
+</table>
+</form>
+
+
+<a id="return" href="/book_list/"><p align="center"><strong>（返回)</strong></p></a>
+
+
+
+  </body>
+</html>

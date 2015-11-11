@@ -1,0 +1,64 @@
+{% load staticfiles %}
+<html>
+  <head>
+<link rel="stylesheet" type="text/css" href="{% static "tables.css" %}" />   
+
+<!--
+<style type="text/css">
+body {background-image:url(/static/background.png); 
+      background-repeat: no-repeat;
+      background-attachment:fixed;
+      background-position: 50% 0%;
+}
+</style>
+-->
+    <title>图书馆</title>
+  </head>
+
+  <body>
+  <br /><br />
+  	<div align="center" id="title"><h1>个人图书馆</h1></div>
+
+    <div id="mainpart">
+  	<div id="renshu" align="center">您共有<b>{{count}}</b>本书。<a href="/new_book/">添加新书信息</a>&nbsp;<a href="/author_list/">查看全部作家</a></div>
+  	<br />
+
+  	<div align="center">
+  	<table id="search">
+  	 <tr>
+  	  <th>搜索作者ID：</th>
+  	  <form  method="POST" action="/search_author/">
+      <td><input name="search_author" type="text"></td>
+      <td><input type="submit" value="搜索"></td>
+      </form>
+     </tr>
+  	</table>
+  	</div>
+  	<br />
+
+	<table align="center" id="list_table">
+	 <tr>
+	  <th>书名</th><th>ISBN</th><th>作者ID</th><th>出版商</th><th>出版日期</th>
+	  <th>价格</th><th>删除</th><th>更新</th>
+	 </tr>
+	{% for book in book_list %}
+	 <tr>
+	  <td><a href="/show_book_information/?id={{book.id}}">{{ book.Title }}</a></td>
+	  <td>{{ book.ISBN }}</td>
+	  <td>{{ book.AuthorID }}</td>
+	  <td>{{ book.Publisher }}</td>
+	  <td>{{ book.PublishDate }}</td>
+	  <td>{{ book.Price }}</td>
+	
+	  <td><a href="/delete_book/?id={{book.id}}">删除</a></td>
+	  <td><a href="/update_book/?id={{book.id}}">更新</a></td>
+	
+
+
+
+	 </tr>
+	{% endfor %}
+	</table><br /><br /><br />
+  </div>
+  </body>
+</html>

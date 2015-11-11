@@ -1,0 +1,62 @@
+{% load staticfiles %}
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="{% static "tables.css" %}" />   
+  <!--    <link rel="stylesheet" type="text/css" href="{% static "show_people_list.css" %}" />    
+<style>
+a:link {text-decoration:none;}
+a:visited {text-decoration:none; color:#0000ff;}
+a:hover {text-decoration:underline; color:ff2138;}
+a:active {text-decoration:underline;}
+
+</style>
+
+<style type="text/css">
+body {background-image:url(/static/background.png); 
+      background-repeat: no-repeat;
+      background-attachment:fixed;
+      background-position: 50% 0%;
+}
+</style>
+-->
+    <title>书目详情</title>
+  </head>
+
+  <body>
+  <br /><br />
+  	<div align="center" id="title"><h1>书目详情</h1></div>
+    <br />
+    <div id="mainpart">
+  	<br />
+  	<br />
+
+	<table border=1 align="center" id="list_table">
+	 <tr>
+	 <th>书名</th><th>作者姓名</th><th>作者ID</th><th>出版商</th><th>出版日期</th>
+	  <th>价格</th><th>ISBN</th>
+	  <th>作者年龄</th>
+	  <th>作者国籍</th>
+	 </tr>
+	
+	 <tr>
+	  <td>{{ book_information.Title }}</td>
+	  
+	  <td>{{ author_information.Name }}</td>
+	  
+	  <td>{{ book_information.AuthorID }}</td>
+	  <td>{{ book_information.Publisher }}</td>
+	  <td>{{ book_information.PublishDate }}</td>
+	  <td>{{ book_information.Price }}</td>
+	  <td>{{ book_information.ISBN }}</td>
+	  
+	  <td>{{ author_information.Age }}</td>
+	  <td>{{ author_information.Country }}</td>
+
+	 </tr>
+	
+	</table><br />
+	
+  </div>
+<a id="return" href="/book_list/"><p align="center"><strong>（返回首页)</strong></p></a>
+  </body>
+</html>

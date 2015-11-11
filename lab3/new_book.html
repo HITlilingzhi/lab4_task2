@@ -1,0 +1,61 @@
+{% load staticfiles %}
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="{% static "tables.css" %}" />   
+<!--
+  <link rel="stylesheet" type="text/css" href="{% static "addr_book.css" %}" />
+<style>
+a:link {text-decoration:none;}
+a:visited {text-decoration:none; color:#0000ff;}
+a:hover {text-decoration:underline; color:ff2138;}
+a:active {text-decoration:underline;}
+
+</style>
+
+<style type="text/css">
+body {background-image:url(/static/background.png); 
+      background-repeat: no-repeat;
+      background-attachment:fixed;
+      background-position: 50% 0%;
+}
+</style>
+-->
+    <title>添加书目</title>
+  </head>
+
+  <body>
+
+    <br /><br />
+    <div align="center" id="title"><h1>添加书目</h1></div>
+    <br />
+    <div id="renshu" align="center">您共有<b>{{count}}</b>本书。<a href="/book_list/">查看全部书目</a></div>
+    <br /><br />
+<form method="post">
+{% csrf_token %}
+<table border=1 align="center" id="list_table">
+
+<tr>
+<th>书名</th><th>ISBN</th><th>作者ID</th><th>出版商</th><th>出版日期</th>
+	  <th>价格</th><th>操作</th>
+ </tr>
+ <tr>
+  <td><input name="Title" type="text"></td>
+  <td><input name="ISBN" type="text"></td>
+  <td><input name="AuthorID" type="text"></td>
+  <td><input name="Publisher" type="text"></td>
+  <td><input name="PublishDate" type="text"></td>
+  <td><input name="Price" type="text"></td>
+
+
+  <td><input type="submit" value="保存"> 
+<br>
+  <input type="reset" value="重填"></td>
+ </tr>
+</table>
+</form>
+
+
+
+
+  </body>
+</html>
